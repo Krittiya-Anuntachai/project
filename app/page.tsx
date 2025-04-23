@@ -1,103 +1,102 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import React from 'react';
+import Header from './components/header';
+import Footer from './components/footer';
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-[#f2f4dd] pt-4 pr-8 pb-4 pl-8">
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="mx-auto py-20 max-w-screen-2xl p-4 sm:pt-0">
+        <p className="p-4 mb-2 text-gray-600 font-medium tracking-wide text-center lg:text-left uppercase">
+          HOMEPAGE
+        </p>
+
+        <div className="mb-4 lg:mb-8 lg:gap-y-0 lg:flex-row lg:justify-between justify-center items-center flex flex-col gap-x-0 gap-y-6 max-md:max-w-lg max-md:mx-auto">
+          <div className="w-full text-center lg:text-left lg:w-2/4">
+            <p className="text-4xl lg:text-6xl lg:mb-6 lg:max-w-2xl lg:mx-0 font-bold tracking-tight leading-[3.25rem] mx-auto max-w-max">
+              Enjoy a better stay experience with our service
+            </p>
+          </div>
+          <div className="w-full text-center lg:text-left lg:w-2/4">
+            <p className="text-lg font-normal text-gray-600 mb-5">
+              We offer everything to make your booking simple, fast, and hassle-free—
+              making every trip more comfortable.
+            </p>
+            <a
+              href="#"
+              className="items-center justify-center text-base font-semibold text-black lg:justify-start flex flex-row gap-2"
+            >
+              Booking here!
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L11.0858 11.4142C11.7525 10.7475 12.0858 10.4142 12.0858 10C12.0858 9.58579 11.7525 9.25245 11.0858 8.58579L7.5 5"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        <img
+          alt="content image"
+          src="https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="mt-2 rounded-xl object-cover w-250 h-auto mx-auto sm:rounded-2xl sm:object-cover sm:max-h-[600px] sm:max-w-[1200px] lg:max-h-[700px] lg:max-w-[1400px] lg:rounded-3xl lg:object-cover lg:max-h-[800px] lg:max-w-[1600px]"
+        />
+
+        <div className="relative">
+          <img
+            alt="content image"
+            src="https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            className="max-h-full object-top object-cover w-full sm:bg-orange-700 sm:text-amber-500 hidden"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      <section className="max-w-screen-2xl mx-auto mt-6 px-8 text-center">
+        <h1 className="text-4xl font-bold text-gray-900" style={{ fontFamily: 'Raleway' }}>
+          Welcome to Our Website
+        </h1>
+        <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+          Discover the best experiences, book appointments, and manage your profile—all in one place.
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          <button className="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">
+            Get Started
+          </button>
+          <button className="bg-white text-blue-700 border border-blue-700 px-6 py-2 rounded-lg hover:bg-blue-50">
+            Learn More
+          </button>
+        </div>
+      </section>
+
+      <section className="mt-20 bg-[#f2f4dd] py-12">
+        <div className="max-w-screen-2xl mx-auto px-8 grid gap-8 md:grid-cols-3 text-center">
+          {[
+            { title: 'Easy Booking', desc: 'Book appointments in just a few clicks.' },
+            { title: 'User Profile', desc: 'Manage your profile and preferences easily.' },
+            { title: 'Secure & Reliable', desc: 'Your data is safe and protected.' }
+          ].map((feature, i) => (
+            <div key={i} className="p-6 bg-white rounded-xl shadow">
+              <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
+              <p className="mt-2 text-gray-600">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
