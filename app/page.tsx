@@ -52,7 +52,7 @@ export default function HomePage() {
         <img
           alt="content image"
           src="https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          className="mt-2 rounded-xl object-cover w-250 h-auto mx-auto sm:rounded-2xl sm:object-cover sm:max-h-[600px] sm:max-w-[1200px] lg:max-h-[700px] lg:max-w-[1400px] lg:rounded-3xl lg:object-cover lg:max-h-[800px] lg:max-w-[1600px]"
+          className="mt-2 rounded-xl object-cover w-full h-auto mx-auto sm:rounded-2xl sm:object-cover sm:max-h-[600px] sm:max-w-[1200px] lg:max-h-[700px] lg:max-w-[1400px] lg:rounded-3xl lg:object-cover lg:max-h-[800px] lg:max-w-[1600px]"
         />
 
         <div className="relative">
@@ -88,7 +88,7 @@ export default function HomePage() {
             { title: 'User Profile', desc: 'Manage your profile and preferences easily.' },
             { title: 'Secure & Reliable', desc: 'Your data is safe and protected.' }
           ].map((feature, i) => (
-            <div key={i} className="p-6 bg-white rounded-xl shadow">
+            <div key={i} className="p-6 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105">
               <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
               <p className="mt-2 text-gray-600">{feature.desc}</p>
             </div>

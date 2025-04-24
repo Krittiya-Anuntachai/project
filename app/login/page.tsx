@@ -8,17 +8,42 @@ export default function LoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:3005/booking/customer', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
-    const data = await res.json();
-    alert(data.success ? 'เข้าสู่ระบบสำเร็จ' : data.message);
+
+    try {
+      // เปลี่ยน URL เป็น /login เพื่อให้ตรงกับที่สร้างใน customer.controller
+      const res = await fetch('http://localhost:3009/customers/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      // ตรวจสอบสถานะการตอบกลับ
+      if (!res.ok) {
+        throw new Error('เกิดข้อผิดพลาดจากเซิร์ฟเวอร์');
+      }
+
+      const data = await res.json();
+
+      // ถ้าล็อกอินสำเร็จ
+      if (data.success && data.user) {
+        // ✅ เก็บข้อมูล user ไว้ใน localStorage
+        localStorage.setItem('user', JSON.stringify(data.user));  // เก็บข้อมูลผู้ใช้ใน localStorage
+
+        alert('เข้าสู่ระบบสำเร็จ');
+
+        // ✅ ไปหน้า booking
+        window.location.href = '/booking';  // ทำการเปลี่ยนหน้าไปยังหน้า booking
+      } else {
+        alert(data.message || 'เข้าสู่ระบบไม่สำเร็จ');
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      alert('เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์');
+    }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#f2f4dd] ">
+    <div className="flex items-center justify-center min-h-screen bg-[#f2f4dd]">
       <form
         onSubmit={handleLogin}
         className="bg-white shadow-md rounded-2xl px-8 py-10 w-full max-w-md"
